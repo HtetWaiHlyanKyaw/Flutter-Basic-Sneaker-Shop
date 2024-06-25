@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/Pages/home_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -11,6 +12,7 @@ class IntroPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(25.0),
@@ -34,19 +36,25 @@ class IntroPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 48),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[900],
-                    borderRadius: BorderRadius.circular(12),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
                   ),
-                  padding: const EdgeInsets.all(25.0),
-                  child: const Center(
-                    child: Text(
-                      "Shop Now",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: const EdgeInsets.all(25.0),
+                    child: const Center(
+                      child: Text(
+                        "Shop Now",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
                     ),
                   ),
                 ),
